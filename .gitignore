@@ -1,0 +1,6 @@
+# Ignore puzzle inputs and build artifacts...
+day-*/*
+
+# but not source code or sample inputs.
+!day-*/*.hs
+!day-*/sample.in
