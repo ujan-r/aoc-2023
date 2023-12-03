@@ -3,4 +3,4 @@ day-*/*
 
 # but not source code or sample inputs.
 !day-*/*.hs
-!day-*/sample.in
+!day-*/sample*.in
