@@ -1,0 +1,29 @@
+#!/usr/bin/env sh
+
+usage="usage: $0 day part
+
+    1 <= day  <= 25
+    1 <= part <= 2
+"
+
+error() {
+    echo "$usage"
+    exit 1
+}
+
+if [ $# -ne 2 ]
+    then error
+fi
+
+if [ "$1" -ge 1 ] && [ "$1" -le 25 ]
+    then day="$1"
+    else error
+fi
+
+case $2 in
+    1) part='one';;
+    2) part='two';;
+    *) error;;
+esac
+
+cd "day-$day" && ghc -O "$part.hs" && "./$part" < in.txt
