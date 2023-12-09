@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+
+usage="usage: $0 day
+
+    1 <= day <= 25
+"
+
+error() {
+    echo "$usage"
+    exit 1
+}
+
+if [ $# -ne 1 ]
+    then error
+fi
+
+if [ "$1" -ge 1 ] && [ "$1" -le 25 ]
+    then folder="day-$1"
+    else error
+fi
+
+mkdir "$folder"
+for file in one.hs two.hs sample1.in sample2.in sample1.ans sample2.ans in.txt
+do
+    touch "$folder/$file"
+done
